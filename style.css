@@ -26,7 +26,7 @@ img {
     position: relative;
     width: 1920px;
     height: 2700px;
-    background: linear-gradient(180deg, var(--off-white) 0%, var(--seafoam) 43.8%, var(--blue-grey) 56.2%, var(--dark-blue) 100%);
+    background: linear-gradient(180deg, var(--off-white) 0%, var(--seafoam) 40%, var(--blue-grey) 60%, var(--dark-blue) 100%);
 }
 
 .bubble{
