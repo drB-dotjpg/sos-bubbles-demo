@@ -1,0 +1,19 @@
+:root {
+    --white: #FFF;
+    --off-white: #F3F9FA;
+    --seafoam: #CEF7E7;
+    --dark-teal: #335563;
+    --blue-grey: #4D6C72;
+    --dark-blue: #191A34;
+}
+
+.page-wrapper{
+    width: 1920px;
+    height: 2700px;
+    background: linear-gradient(180deg, var(--off-white) 0%, var(--seafoam) 43.8%, var(--blue-grey) 56.2%, var(--dark-blue) 100%);
+}
+
+.bubble{
+    width: 10px;
+    position: absolute;
+}
