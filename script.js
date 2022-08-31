@@ -1,6 +1,6 @@
 const pwidth = 1920;
 const pheight = 2700;
-const numBubbles = 36;
+const numBubbles = 30;
 
 
 
@@ -23,21 +23,22 @@ bubbles.forEach((bubble, num) => {
 function initBubble(id, overrideDelay = 0){
     const bubble = document.querySelector("#"+id);
 
-    bubble.style.transform = `translate3d(0px, 0px, 0px)`;
     bubble.style.left = `${getRandomNum(-50, pwidth+50)}px`
-    bubble.style.opacity = getRandomNum(.6, 1);
+    bubble.style.opacity = getRandomNum(.4, 1);
+    bubble.style.filter = `blur(${getRandomInt(2,15)}px)`;
 
     const duration = getRandomInt(8,13);
-    const delay = overrideDelay == 0 ? getRandomNum(0,3) : overrideDelay;
+    const delay = overrideDelay == 0 ? getRandomNum(0,6) : overrideDelay;
     const scale = getRandomNum(.4, .9);
-    const horMovement = getRandomInt(25,200);
+    const opacity = getRandomNum(.7, 1);
+    const horMovement = getRandomInt(15,140);
     const horDuration = getRandomInt(3,5);
 
     const horTl = gsap.timeline({repeat: ((duration+delay)/horDuration)});
     horTl.fromTo(bubble, {x: -horMovement}, {duration: horDuration, x: horMovement, ease: 'sine.inOut'});
     horTl.to(bubble, {duration: horDuration, x: -horMovement, ease: 'sine.inOut'});
 
-    gsap.fromTo(bubble, {y: pheight+100, scale: scale}, {y: -100, scale: scale, duration: duration, delay: delay, ease: 'none', onComplete: () => {
+    gsap.fromTo(bubble, {y: pheight+100, scale: scale, opacity: opacity}, {y: -100, scale: scale, opacity: getRandomNum(0, .3), duration: duration, delay: delay, ease: 'none', onComplete: () => {
         initBubble(id);
     }});
 }
