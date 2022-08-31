@@ -54,7 +54,16 @@ function getRandomInt(min, max){
 var isTranstioned = false;
 document.addEventListener("keypress", function(event){
     if (event.key === "Enter"){
-        gsap.to(".page-wrapper", {y: (isTranstioned ? 0 : -(1080+540)), duration: 2, ease: "Power2.easeInOut"});
+        const tl = gsap.timeline();
+        if (isTranstioned){
+            tl.to("#bottom-img", {scale:.8, opacity:0, webkitFilter:"blur(20px)", duration: 1, ease: "Power1.easeIn"});
+            tl.to(".page-wrapper", {y: 0, duration: 2, ease: "Power2.easeInOut"}, "-=.5");
+            tl.fromTo("#top-img", {scale:.8, opacity:0, webkitFilter:"blur(20px)"}, {duration: 1, scale: 1, opacity: 1, webkitFilter:"blur(0px)", ease: "Power1.easeOut"}, "-=.5");
+        } else {
+            tl.to("#top-img", {scale:.8, opacity:0, webkitFilter:"blur(20px)", duration: 1, ease: "Power1.easeIn"});
+            tl.to(".page-wrapper", {y: -(1080+540), duration: 2, ease: "Power2.easeInOut"}, "-=.5");
+            tl.fromTo("#bottom-img", {scale:.8, opacity:0, webkitFilter:"blur(20px)"}, {duration: 1, scale: 1, opacity: 1, webkitFilter:"blur(0px)", ease: "Power1.easeOut"}, "-=.5");
+        }
         isTranstioned = !isTranstioned;
     }
 })
