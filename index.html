@@ -10,13 +10,21 @@
 </head>
 
 <body>
+    <svg style="display: none;">
+        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+          <feTurbulence id="sea-filter" numOctaves="1" seed="2" baseFrequency=".003"></feTurbulence>
+          <feDisplacementMap scale="40" in="SourceGraphic"></feDisplacementMap>
+        </filter>
+    </svg>
     <div class="view-wrapper">
         <div class="page-wrapper">
             <img id="top-img" src="top.png" style="top: 0">
             <img id="bottom-img" src="bottom.png" style="top: 1620px">
+            <div id="bubbles-wrapper"></div>
         </div>
     </div>
-    <h3>Press enter to switch scene</h3>
+    <h2>Press enter to switch scene</h2>
+    <h2>Press h to show/hide graphics</h2>
 </body>
 
 </html>

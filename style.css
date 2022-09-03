@@ -12,7 +12,6 @@
     height: 1080px;
     position: relative;
     overflow: hidden;
-    outline: 5px solid black;
 }
 
 img {
@@ -27,6 +26,11 @@ img {
     width: 1920px;
     height: 2700px;
     background: linear-gradient(180deg, var(--off-white) 0%, var(--seafoam) 40%, var(--blue-grey) 60%, var(--dark-blue) 100%);
+}
+
+#bubbles-wrapper {
+    transform: scale(1.05);
+    filter: url(#turbulence);
 }
 
 .bubble{
