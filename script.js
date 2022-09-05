@@ -11,7 +11,8 @@ bubblesWrapper.innerHTML = bubblesWrapper.innerHTML + bubbleTemplate.repeat(numB
 
 const bubbles = document.querySelectorAll(".bubble");
 
-// gsap.to("#sea-filter", {duration: 15, attr:{baseFrequency: 0.012}, repeat: -1, yoyo: true, ease: "Sine.easeInOut"});
+gsap.to("#turb-freq", {duration: 15, attr:{baseFrequency: 0.004}, repeat: -1, yoyo: true, ease: "Sine.easeInOut"});
+gsap.to("#turb-displacement", {duration: 23, attr:{scale: 40}, repeat: -1, yoyo: true, ease: "Sine.easeInOut"});
 
 bubbles.forEach((bubble, num) => {
     bubble.id = "bubble-" + num;
